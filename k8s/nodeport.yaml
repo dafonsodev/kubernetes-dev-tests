@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: goserver-service
+spec:
+  selector:
+    app: goserver
+  type: NodePort #Expor para fora através de qq um dos nodes - porta entre 30.001 ~ 32.727
+  ports:
+  - name: goserver-service
+    port: 80
+    nodePort: 30001
+    targetPort: 8000
+    protocol: TCP
